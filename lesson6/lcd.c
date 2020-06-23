@@ -11,25 +11,18 @@ void loop(){
     str=Serial.readString();
   if((str.length()<=16)&&str.length()>0)
   {
-    lcd.setCursor(0, 0);
-    lcd.print("                ");
-    lcd.setCursor(0, 1);
-    lcd.print("                ");
-    lcd.setCursor(0, 0);
+    lcd.clear();
     lcd.print(str);
   }
   else if((str.length()>16)&&(str.length())<=32)
   {
-    lcd.setCursor(0, 0);
-    lcd.print("                ");
-    lcd.setCursor(0, 1);
-    lcd.print("                ");
-    lcd.setCursor(0, 0);
+    lcd.clear();
     for(int i=0;i<str.length();i++)
     {
       lcd.print(str[i]);
       if(i==16)
       {
+
         lcd.setCursor(0, 1);
         lcd.print(str[i]);
       }
